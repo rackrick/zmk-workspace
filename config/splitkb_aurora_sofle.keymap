@@ -26,7 +26,14 @@
  */
 
 / {
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        combo_question {
+            bindings = <&kp DE_QUESTION>;
+            key-positions = <10 11>;
+        };
+    };
 
     behaviors {
         /* left-hand HRMs */
@@ -104,11 +111,11 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1         &bt BT_SEL 2         &bt BT_SEL 3      &bt BT_SEL 4                    &none          &none     &none         &none      &none       &studio_unlock
-&trans      &none         &kp C_AL_CALC        &none  SPACE  &mo 1    &mo 2  &kp BACKSPACE  &kp ENTER  &to 0                       &kp LS(LG(S))     &none                           &kp PAGE_UP    &kp HOME  &kp UP_ARROW  &kp END    &kp INSERT  &none
-&trans      &kp LC(Z)     &hml LEFT_ALT LC(X)  &hml LEFT_GUI LC(C)  &hml LCTRL LC(V)  &kp CAPSLOCK                    &kp DELETE     &kp LEFT  &kp DOWN      &kp RIGHT  &none       &none
-&trans      &to 4         &to 5                &none                &none             &none         &none     &none   &kp PAGE_DOWN  &none     &none         &none      &none       &trans
-                          &trans               &trans               &trans            &trans        &trans    &trans  &trans         &trans    &trans        &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2  &bt BT_SEL 3   &bt BT_SEL 4                    &none          &none     &none         &none      &none       &studio_unlock
+&trans      &none         &kp C_AL_CALC  &none         &kp LS(LG(S))  &none                           &kp PAGE_UP    &kp HOME  &kp UP_ARROW  &kp END    &kp INSERT  &none
+&trans      &kp LC(Z)     &kp LC(X)      &kp LC(C)     &kp LC(V)      &kp CAPSLOCK                    &kp DELETE     &kp LEFT  &kp DOWN      &kp RIGHT  &none       &none
+&trans      &none         &none          &none         &to 4          &to 5         &none     &none   &kp PAGE_DOWN  &none     &none         &none      &none       &trans
+                          &trans         &trans        &trans         &trans        &trans    &trans  &trans         &trans    &trans        &trans
             >;
         };
 
